@@ -1,6 +1,6 @@
 # Covid Slayer API
 
-This app is built with React along with Material UI.
+API for Covid Slayer app.
 
 ## Install instructions
 
@@ -13,12 +13,10 @@ Install dependencies by:\
 ### `npm i`
 
 To run tests:\
-You will also see any lint errors in the console.
 
 ### `npm test`
 
 Run by:\
-You will also see any lint errors in the console.
 
 ### `npm start`
 
