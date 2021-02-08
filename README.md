@@ -8,11 +8,11 @@ Copy this repo by:
 
 ### `git clone https://github.com/vinieshwan/covid-slayer-server`
 
-Install dependencies by:\
+Install dependencies by:
 
 ### `npm i`
 
-To run tests:\
+To run tests:
 
 ### `npm test`
 
@@ -30,7 +30,7 @@ Before running the server make to add these Environment variables:
 | AUTH_TOKEN_EXPIRY    | Token expiry                           |
 | COOKIE_PATH          | Cookie path                            |
 
-Run by:\
+Run by:
 
 ### `npm start`
 
