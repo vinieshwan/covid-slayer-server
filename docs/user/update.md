@@ -13,9 +13,9 @@ Update a user information endpoint
 
 | Property | Type   | Description | Constraints                                 |
 | -------- | ------ | ----------- | ------------------------------------------- |
-| email    | String | User email  | Format: `email`, Max-length: `255`          |
-| name     | String | User name   | Min-length: `6`, Max-length: `100`          |
-| avatar   | String | User avatar | enum: ['witch', 'archer', 'boxer', 'ninja'] |
+| [email]  | String | User email  | Format: `email`, Max-length: `255`          |
+| [name]   | String | User name   | Min-length: `6`, Max-length: `100`          |
+| [avatar] | String | User avatar | enum: ['witch', 'archer', 'boxer', 'ninja'] |
 
 ## Example Response
 

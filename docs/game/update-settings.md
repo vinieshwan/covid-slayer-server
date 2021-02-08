@@ -11,14 +11,14 @@ Update user game settings endpoint
 
 ## Request Body
 
-| Property   | Type    | Description      | Constraints                                 |
-| ---------- | ------- | ---------------- | ------------------------------------------- |
-| playerName | String  | Player name      | Min-length: `1`, Max-length: `100`          |
-| gameTime   | Number  | Game time        | Minimum: `5`                                |
-| won        | Boolean | Number of wins   |                                             |
-| lost       | Boolean | Number of losses |                                             |
-| commentary | String  | Game commentary  |                                             |
-| avatar     | String  | Avatar           | enum: ['witch', 'archer', 'boxer', 'ninja'] |
+| Property     | Type    | Description      | Constraints                                 |
+| ------------ | ------- | ---------------- | ------------------------------------------- |
+| [playerName] | String  | Player name      | Min-length: `1`, Max-length: `100`          |
+| [gameTime]   | Number  | Game time        | Minimum: `5`                                |
+| [won]        | Boolean | Number of wins   |                                             |
+| [lost]       | Boolean | Number of losses |                                             |
+| [commentary] | String  | Game commentary  |                                             |
+| [avatar]     | String  | Avatar           | enum: ['witch', 'archer', 'boxer', 'ninja'] |
 
 ## Example Response
 
