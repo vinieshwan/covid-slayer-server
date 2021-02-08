@@ -16,6 +16,20 @@ To run tests:\
 
 ### `npm test`
 
+Before running the server make to add these Environment variables:
+
+| Variable             | Description                            |
+| -------------------- | -------------------------------------- |
+| PORT                 | Port                                   |
+| DB_URL               | Database URL                           |
+| DB_NAME              | Database name                          |
+| KEY_SALT             | Salt for password encryption           |
+| KEY_JWT              | JWT key for generating a token         |
+| KEY_COOKIE           | Cookie key for secure cookie setting   |
+| REFRESH_TOKEN_EXPIRY | JWT key for generating a refresh token |
+| AUTH_TOKEN_EXPIRY    | Token expiry                           |
+| COOKIE_PATH          | Cookie path                            |
+
 Run by:\
 
 ### `npm start`
