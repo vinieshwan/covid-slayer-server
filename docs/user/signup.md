@@ -4,9 +4,10 @@ User signup endpoint
 
 ## Resource Information
 
-| -------- | ------------------------ |
+| Info     |              |
+| -------- | ------------ |
 | Endpoint | `/v1/signup` |
-| Method | `POST` |
+| Method   | `POST`       |
 
 ## Request Body
 

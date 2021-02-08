@@ -4,9 +4,10 @@ Retrieve user information endpoint
 
 ## Resource Information
 
-| -------- | ------------------------ |
+| Info     |            |
+| -------- | ---------- |
 | Endpoint | `/v1/user` |
-| Method | `GET` |
+| Method   | `GET`      |
 
 ## Request Params
 

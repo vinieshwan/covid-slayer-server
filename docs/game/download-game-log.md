@@ -4,9 +4,10 @@ User download all game logs endpoint
 
 ## Resource Information
 
-| -------- | ------------------------ |
+| Info     |                         |
+| -------- | ----------------------- |
 | Endpoint | `/v1/download-game-log` |
-| Method | `GET` |
+| Method   | `GET`                   |
 
 ## Request Params
 

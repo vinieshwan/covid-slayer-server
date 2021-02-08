@@ -132,9 +132,9 @@ describe('/lib/controllers/users.js', () => {
 				{
 					userId: response._id,
 					fields: {
+						avatar: 1,
 						email: 1,
-						name: 1,
-						avatar: 1
+						name: 1
 					}
 				}
 			]);

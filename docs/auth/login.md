@@ -4,9 +4,10 @@ User login endpoint
 
 ## Resource Information
 
-| -------- | ------------------------ |
+| Info     |             |
+| -------- | ----------- |
 | Endpoint | `/v1/login` |
-| Method | `POST` |
+| Method   | `POST`      |
 
 ## Request Body
 

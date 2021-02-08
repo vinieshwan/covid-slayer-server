@@ -4,9 +4,10 @@ User logout endpoint
 
 ## Resource Information
 
-| -------- | ------------------------ |
+| Info     |              |
+| -------- | ------------ |
 | Endpoint | `/v1/logout` |
-| Method | `POST` |
+| Method   | `POST`       |
 
 ## Request Body
 

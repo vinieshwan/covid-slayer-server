@@ -4,9 +4,10 @@ Update a user information endpoint
 
 ## Resource Information
 
-| -------- | ------------------------ |
+| Info     |                   |
+| -------- | ----------------- |
 | Endpoint | `/v1/update-user` |
-| Method | `PUT` |
+| Method   | `PUT`             |
 
 ## Request Body
 

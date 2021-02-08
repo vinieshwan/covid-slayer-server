@@ -4,9 +4,10 @@ Update user game settings endpoint
 
 ## Resource Information
 
-| -------- | ------------------------ |
+| Info     |                            |
+| -------- | -------------------------- |
 | Endpoint | `/v1/update-game-settings` |
-| Method | `PUT` |
+| Method   | `PUT`                      |
 
 ## Request Body
 

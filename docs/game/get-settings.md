@@ -4,9 +4,10 @@ Retrieve user game settings endpoint
 
 ## Resource Information
 
-| -------- | ------------------------ |
+| Info     |                     |
+| -------- | ------------------- |
 | Endpoint | `/v1/game-settings` |
-| Method | `GET` |
+| Method   | `GET`               |
 
 ## Request Params
 

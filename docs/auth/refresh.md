@@ -4,9 +4,10 @@ API account access endpoint
 
 ## Resource Information
 
-| -------- | ------------------------ |
+| Info     |               |
+| -------- | ------------- |
 | Endpoint | `/v1/refresh` |
-| Method | `GET` |
+| Method   | `GET`         |
 
 ## Request Body
 
