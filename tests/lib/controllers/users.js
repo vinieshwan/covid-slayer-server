@@ -133,7 +133,8 @@ describe('/lib/controllers/users.js', () => {
 					userId: response._id,
 					fields: {
 						email: 1,
-						name: 1
+						name: 1,
+						avatar: 1
 					}
 				}
 			]);
@@ -164,7 +165,8 @@ describe('/lib/controllers/users.js', () => {
 				email: 'username@email.com',
 				password:
 					'$2b$10$5dBW5jnFkZZ7Xl6zchDUDu3Fbf4yQwRYrFyPExldCa8j.R/6Kay5W',
-				name: 'name'
+				name: 'name',
+				avatar: 'witch'
 			};
 
 			sandbox.stub(usersController.model, 'get').resolves(response);
@@ -175,7 +177,8 @@ describe('/lib/controllers/users.js', () => {
 				await usersController.validate('username@email.com', 'password')
 			).to.deep.equal({
 				name: 'name',
-				userId: response._id
+				userId: response._id,
+				avatar: 'witch'
 			});
 
 			expect(usersController.model.get.calledOnce).to.be.true;
@@ -185,7 +188,8 @@ describe('/lib/controllers/users.js', () => {
 					fields: {
 						email: 1,
 						password: 1,
-						name: 1
+						name: 1,
+						avatar: 1
 					}
 				}
 			]);
@@ -257,7 +261,8 @@ describe('/lib/controllers/users.js', () => {
 					name: 'new name',
 					fields: {
 						name: 1,
-						email: 1
+						email: 1,
+						avatar: 1
 					}
 				}
 			]);

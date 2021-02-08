@@ -27,11 +27,9 @@ describe('/lib/middlewares/verify-tokens.js', () => {
 		});
 
 		req = {
-			headers: {
-				'x-auth-token': `Bearer ${auth.token}`
-			},
 			cookies: {
-				'xsrf-token': auth.xsrfToken
+				'xsrf-token': auth.xsrfToken,
+				'auth-token': auth.token
 			},
 			signedCookies: {
 				refreshToken: generateRefreshToken({
@@ -65,7 +63,7 @@ describe('/lib/middlewares/verify-tokens.js', () => {
 	});
 
 	it('should return error if x-auth-token is not provided', function () {
-		delete req.headers['x-auth-token'];
+		delete req.cookies['auth-token'];
 
 		middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([401]);
@@ -89,7 +87,7 @@ describe('/lib/middlewares/verify-tokens.js', () => {
 	});
 
 	it('should return error if there was an error when verifying a token', function () {
-		req.headers['x-auth-token'] = 'something';
+		req.cookies['auth-token'] = 'something';
 
 		middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([401]);

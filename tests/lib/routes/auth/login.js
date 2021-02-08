@@ -84,8 +84,6 @@ describe('lib/routes/auth/login.js', function () {
 				expect(res.statusCode).to.equal(200);
 				expect(endpointResponse.message).to.equal('');
 				expect(endpointResponse.data.ok).to.be.true;
-				expect(endpointResponse.data.session.token).to.be.a('string');
-				expect(endpointResponse.data.session.token.length).to.equal(228);
 				expect(new Date(endpointResponse.data.session.expiry)).to.be.a('date');
 				expect(endpointResponse.data.session.name).to.equal('name');
 				done();

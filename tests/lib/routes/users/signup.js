@@ -43,7 +43,8 @@ describe('lib/routes/users/signup.js', function () {
 		body = {
 			name: 'John Doe ',
 			email: 'john@doe.com',
-			password: '123456'
+			password: '123456',
+			avatar: 'witch'
 		};
 
 		controllers.users.create.resolves('60120cd2368628317d1934fc');

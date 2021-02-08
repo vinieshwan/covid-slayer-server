@@ -36,21 +36,24 @@ describe('lib/routes/users/get.js', function () {
 			config.keys.cookie
 		);
 
-		const j = request.jar();
+		const jar = request.jar();
 		const cookie = request.cookie(`xsrf-token=${auth.xsrfToken}`);
-		j.setCookie(cookie, `http://localhost:${config.port}/v1/user`);
+		jar.setCookie(cookie, `http://localhost:${config.port}/v1/user`);
+
+		const authCookie = request.cookie(`auth-token=${auth.token}`);
+		jar.setCookie(
+			authCookie,
+			`http://localhost:${config.port}/v1/update-game-settings`
+		);
 
 		const signedCookie = request.cookie(`refreshToken=s%3A${refreshToken}`);
-		j.setCookie(signedCookie, `http://localhost:${config.port}/v1/user`);
+		jar.setCookie(signedCookie, `http://localhost:${config.port}/v1/user`);
 
 		testRequest = request.defaults({
 			uri: '/v1/user',
 			baseUrl: `http://localhost:${config.port}`,
 			json: true,
-			headers: {
-				'x-auth-token': auth.token
-			},
-			jar: j
+			jar: jar
 		});
 
 		server = config.server;

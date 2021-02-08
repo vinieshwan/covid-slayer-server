@@ -44,7 +44,7 @@ describe('/lib/middlewares/expire-session.js', () => {
 	it('should expire session', async function () {
 		await middleware(req, res, () => {
 			expect(req.session).to.be.an('undefined');
-			expect(res.clearCookie.calledTwice).to.be.true;
+			expect(res.clearCookie.callCount).to.equal(3);
 			expect(res.clearCookie.getCall(0).args.length).to.equal(2);
 			expect(res.clearCookie.getCall(0).args[0]).to.equal('refreshToken');
 			expect(res.clearCookie.getCall(0).args[1]).to.deep.equal({
@@ -66,7 +66,7 @@ describe('/lib/middlewares/expire-session.js', () => {
 			expect(error.json.getCall(0).args).to.deep.equal([
 				{ message: 'error', data: {} }
 			]);
-			expect(res.clearCookie.calledTwice).to.be.true;
+			expect(res.clearCookie.callCount).to.equal(3);
 			expect(req.session).to.be.an('undefined');
 		});
 	});

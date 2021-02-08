@@ -40,6 +40,12 @@ describe('lib/routes/game/get-settings.js', function () {
 		const cookie = request.cookie(`xsrf-token=${auth.xsrfToken}`);
 		jar.setCookie(cookie, `http://localhost:${config.port}/v1/game-settings`);
 
+		const authCookie = request.cookie(`auth-token=${auth.token}`);
+		jar.setCookie(
+			authCookie,
+			`http://localhost:${config.port}/v1/update-game-settings`
+		);
+
 		const signedCookie = request.cookie(`refreshToken=s%3A${refreshToken}`);
 		jar.setCookie(
 			signedCookie,
@@ -50,9 +56,6 @@ describe('lib/routes/game/get-settings.js', function () {
 			uri: '/v1/game-settings',
 			baseUrl: `http://localhost:${config.port}`,
 			json: true,
-			headers: {
-				'x-auth-token': auth.token
-			},
 			jar
 		});
 

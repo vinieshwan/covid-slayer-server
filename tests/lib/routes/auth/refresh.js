@@ -11,6 +11,8 @@ const {
 	generateRefreshToken
 } = require('../../../../lib/utils');
 
+const sandbox = sinon.createSandbox();
+
 describe('lib/routes/auth/refresh.js', function () {
 	let controllers,
 		routes,
@@ -42,21 +44,18 @@ describe('lib/routes/auth/refresh.js', function () {
 
 		const jar = request.jar();
 		const cookie = request.cookie(`xsrf-token=${auth.xsrfToken}`);
-		jar.setCookie(cookie, `http://localhost:${config.port}/v1/game-settings`);
+		jar.setCookie(cookie, `http://localhost:${config.port}/v1/refresh`);
+
+		const authCookie = request.cookie(`auth-token=${auth.token}`);
+		jar.setCookie(authCookie, `http://localhost:${config.port}/v1/refresh`);
 
 		const signedCookie = request.cookie(`refreshToken=s%3A${refreshToken}`);
-		jar.setCookie(
-			signedCookie,
-			`http://localhost:${config.port}/v1/game-settings`
-		);
+		jar.setCookie(signedCookie, `http://localhost:${config.port}/v1/refresh`);
 
 		testRequest = request.defaults({
 			uri: '/v1/refresh',
 			baseUrl: `http://localhost:${config.port}`,
 			json: true,
-			headers: {
-				'x-auth-token': auth.token
-			},
 			jar
 		});
 
@@ -95,14 +94,24 @@ describe('lib/routes/auth/refresh.js', function () {
 		server.close(done);
 	});
 
+	beforeEach(function () {
+		sandbox.stub(controllers.users, 'get').resolves({
+			_id: '60120cd2368628317d1934fc',
+			email: 'username@email.com',
+			name: 'firstname lastname'
+		});
+	});
+
+	afterEach(() => {
+		sandbox.restore();
+	});
+
 	describe('success', function () {
 		it('should refresh a', function (done) {
 			testRequest.get({}, function (error, res, endpointResponse) {
 				expect(res.statusCode).to.equal(200);
 				expect(endpointResponse.message).to.equal('');
 				expect(endpointResponse.data.ok).to.be.true;
-				expect(endpointResponse.data.session.token).to.be.a('string');
-				expect(endpointResponse.data.session.token.length).to.equal(228);
 				expect(new Date(endpointResponse.data.session.expiry)).to.be.a('date');
 
 				done();

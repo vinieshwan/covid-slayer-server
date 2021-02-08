@@ -126,14 +126,10 @@ describe('lib/server.js', function () {
 		});
 
 		it('should server start listening', function () {
-			expect(server.app.use.calledOnce).to.be.true;
-			expect(server.app.use.getCall(0).args.length).to.equal(1);
-			expect(server.app.use.getCall(0).args[0]).to.be.a('function');
 			expect(server.app.listen.calledOnce).to.be.true;
 			expect(server.app.listen.getCall(0).args.length).to.equal(2);
 			expect(server.app.listen.getCall(0).args[0]).to.equal(config.port);
 			expect(server.app.listen.getCall(0).args[1]).to.be.a('function');
-			expect(server.app.listen.calledAfter(server.app.use)).to.be.true;
 		});
 	});
 });
