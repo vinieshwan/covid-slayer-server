@@ -27,7 +27,8 @@ const config = {
 	port: 8000,
 	rootPath: path.join(__dirname),
 	mongodb: {
-		connectionUrl: 'mongodb://root:root@localhost:27017',
+		connectionUrl:
+			'mongodb://root:root@db:27017/covid-slayer?retryWrites=true&w=majority',
 		poolSize: 10,
 		database: 'covid-slayer'
 	},

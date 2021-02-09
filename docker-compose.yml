@@ -2,16 +2,20 @@ version: '3.7'
 
 services:
   mongo:
-    image: mongo:3.6
+    image: mongo:3.6-xenial
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
       MONGO_INITDB_DATABASE: covid-slayer
+      DATABASE_URL: 'mongodb://db:27017'
     volumes:
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - ./dockervolume/mongodb:/data/db
+    expose:
+      - 27017
     ports:
       - '27017:27017'
+    restart: always
     networks:
       - app-network
   server:
@@ -22,6 +26,8 @@ services:
     container_name: covid-slayer-node-server
     command: npm start
     restart: always
+    links:
+      - 'mongo:db'
     volumes:
       - ./:/usr/src/app
     ports:
@@ -40,6 +46,10 @@ services:
     image: covid-slayer-app
     container_name: covid-slayer-react-app
     command: npm start
+    restart: always
+    environment:
+      CORSHEADER: 'http://localhost:4000'
+      proxy: 'true'
     volumes:
       - ../covid-slayer-client/:/usr/app
       - /usr/app/node_modules
