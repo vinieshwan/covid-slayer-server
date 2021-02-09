@@ -32,7 +32,7 @@ const config = {
 		database: 'covid-slayer'
 	},
 	keys: {
-		salt: 10,
+		salt: 15,
 		jwt: 'jwt-secret',
 		cookie: 'cookie-secret'
 	},

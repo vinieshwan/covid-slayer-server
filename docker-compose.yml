@@ -1,0 +1,61 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:3.6
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: covid-slayer
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./dockervolume/mongodb:/data/db
+    ports:
+      - '27017:27017'
+    networks:
+      - app-network
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: covid-slayer-server
+    container_name: covid-slayer-node-server
+    command: npm start
+    restart: always
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - '4000:4000'
+    depends_on:
+      - mongo
+    env_file: ./.env
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-network
+  client:
+    build:
+      context: ../covid-slayer-client
+      dockerfile: Dockerfile
+    image: covid-slayer-app
+    container_name: covid-slayer-react-app
+    command: npm start
+    volumes:
+      - ../covid-slayer-client/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - server
+    ports:
+      - '3000:3000'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  data-volume:
+  node_modules:
+  web-root:
+    driver: local

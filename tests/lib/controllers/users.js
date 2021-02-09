@@ -164,7 +164,7 @@ describe('/lib/controllers/users.js', () => {
 				_id: '60120cd2368628317d1934fc',
 				email: 'username@email.com',
 				password:
-					'$2b$10$5dBW5jnFkZZ7Xl6zchDUDu3Fbf4yQwRYrFyPExldCa8j.R/6Kay5W',
+					'c2NyeXB0AA8AAAAIAAAAAU/zXJhGrfguQ8U6bINZQ8E7h/ZAJLnvXXZYI7N+s1rvUbsdtrW4QNNC3x8IpEkk+F9Hhn+lpCIFU3z/tBn6lD7TTjnOafVehxs1+iu9iJ0F',
 				name: 'name',
 				avatar: 'witch'
 			};
