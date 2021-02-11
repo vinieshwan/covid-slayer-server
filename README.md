@@ -30,6 +30,7 @@ Run the app:
 | REFRESH_TOKEN_EXPIRY | JWT key for generating a refresh token |
 | AUTH_TOKEN_EXPIRY | Token expiry |
 | COOKIE_PATH | Cookie path |
+| NODE_ENV | Your node environment. Either `development` or `production` |
 
 View the app in your browser:
 
