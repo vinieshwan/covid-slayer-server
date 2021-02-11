@@ -115,8 +115,7 @@ describe('lib/routes/users/get.js', function () {
 			testRequest.get({}, function (error, res, endpointResponse) {
 				expect(res.statusCode).to.equal(500);
 				expect(endpointResponse).to.deep.equal({
-					message: 'test-error',
-					data: {}
+					message: 'Internal server error: test-error'
 				});
 
 				done();

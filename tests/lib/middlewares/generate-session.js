@@ -83,7 +83,7 @@ describe('/lib/middlewares/generate-session.js', () => {
 			expect(controllers.sessions.create.notCalled).to.be.true;
 			expect(error.status.getCall(0).args).to.deep.equal([401]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'Unauthorized Access', data: {} }
+				{ message: 'Unauthorized Access' }
 			]);
 
 			expect(req.session).to.be.an('undefined');
@@ -98,7 +98,7 @@ describe('/lib/middlewares/generate-session.js', () => {
 			expect(controllers.sessions.expireSession.notCalled).to.be.true;
 			expect(error.status.getCall(0).args).to.deep.equal([401]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'Unauthorized Access', data: {} }
+				{ message: 'Unauthorized Access' }
 			]);
 
 			expect(req.session).to.be.an('undefined');
@@ -112,9 +112,7 @@ describe('/lib/middlewares/generate-session.js', () => {
 			expect(controllers.sessions.create.calledOnce).to.be.true;
 			expect(controllers.sessions.expireSession.notCalled).to.be.true;
 			expect(error.status.getCall(0).args).to.deep.equal([500]);
-			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'error', data: {} }
-			]);
+			expect(error.json.getCall(0).args).to.deep.equal([{ message: 'error' }]);
 
 			expect(req.session).to.be.an('undefined');
 		});

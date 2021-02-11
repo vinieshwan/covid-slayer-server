@@ -57,7 +57,7 @@ describe('/lib/middlewares/verify-session.js', () => {
 		await middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([401]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'Unauthorized Access', data: {} }
+				{ message: 'Unauthorized Access' }
 			]);
 
 			expect(req.session).to.be.an('undefined');
@@ -70,7 +70,7 @@ describe('/lib/middlewares/verify-session.js', () => {
 		await middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([500]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'error', data: {} }
+				{ message: 'Internal server error: error' }
 			]);
 
 			expect(req.session).to.be.an('undefined');

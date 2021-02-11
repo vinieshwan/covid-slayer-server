@@ -70,8 +70,7 @@ describe('lib/routes/auth/logout.js', function () {
 			testRequest.post({}, function (error, res, endpointResponse) {
 				expect(res.statusCode).to.equal(500);
 				expect(endpointResponse).to.deep.equal({
-					message: 'error',
-					data: {}
+					message: 'Internal server error: error'
 				});
 
 				done();

@@ -66,7 +66,6 @@ describe('lib/utils/index.js', function () {
 			expect(result.json.calledOnce).to.be.true;
 			expect(result.json.getCall(0).args).to.deep.equal([
 				{
-					data: {},
 					message: 'Success'
 				}
 			]);
@@ -84,7 +83,6 @@ describe('lib/utils/index.js', function () {
 			expect(result.json.calledOnce).to.be.true;
 			expect(result.json.getCall(0).args).to.deep.equal([
 				{
-					data: {},
 					message: ''
 				}
 			]);
@@ -102,8 +100,7 @@ describe('lib/utils/index.js', function () {
 			expect(result.json.calledOnce).to.be.true;
 			expect(result.json.getCall(0).args).to.deep.equal([
 				{
-					data: {},
-					message: 'user'
+					message: 'Not found: user'
 				}
 			]);
 		});
@@ -120,8 +117,7 @@ describe('lib/utils/index.js', function () {
 			expect(result.json.calledOnce).to.be.true;
 			expect(result.json.getCall(0).args).to.deep.equal([
 				{
-					data: {},
-					message: 'duplicate'
+					message: 'Conflict: duplicate'
 				}
 			]);
 		});
@@ -138,8 +134,7 @@ describe('lib/utils/index.js', function () {
 			expect(result.json.calledOnce).to.be.true;
 			expect(result.json.getCall(0).args).to.deep.equal([
 				{
-					data: {},
-					message: 'not created'
+					message: 'Internal server error: not created'
 				}
 			]);
 		});
@@ -156,8 +151,7 @@ describe('lib/utils/index.js', function () {
 			expect(result.json.calledOnce).to.be.true;
 			expect(result.json.getCall(0).args).to.deep.equal([
 				{
-					data: {},
-					message: 'bad'
+					message: 'Bad request: bad'
 				}
 			]);
 		});
@@ -174,8 +168,7 @@ describe('lib/utils/index.js', function () {
 			expect(result.json.calledOnce).to.be.true;
 			expect(result.json.getCall(0).args).to.deep.equal([
 				{
-					data: {},
-					message: 'bad'
+					message: 'Unauthorized: bad'
 				}
 			]);
 		});
@@ -192,8 +185,7 @@ describe('lib/utils/index.js', function () {
 			expect(result.json.calledOnce).to.be.true;
 			expect(result.json.getCall(0).args).to.deep.equal([
 				{
-					data: {},
-					message: 'something went wrong'
+					message: 'Internal server error: something went wrong'
 				}
 			]);
 		});

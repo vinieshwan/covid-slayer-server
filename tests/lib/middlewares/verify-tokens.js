@@ -68,7 +68,7 @@ describe('/lib/middlewares/verify-tokens.js', () => {
 		middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([401]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'Unauthorized Access', data: {} }
+				{ message: 'Unauthorized Access' }
 			]);
 			expect(req.session).to.be.an('undefined');
 		});
@@ -80,7 +80,7 @@ describe('/lib/middlewares/verify-tokens.js', () => {
 		middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([403]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'Forbidden Access', data: {} }
+				{ message: 'Forbidden Access' }
 			]);
 			expect(req.session).to.be.an('undefined');
 		});
@@ -92,7 +92,7 @@ describe('/lib/middlewares/verify-tokens.js', () => {
 		middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([401]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'Unauthorized Access', data: {} }
+				{ message: 'Unauthorized Access' }
 			]);
 			expect(req.session).to.be.an('undefined');
 		});

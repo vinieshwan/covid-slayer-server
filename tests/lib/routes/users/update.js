@@ -122,8 +122,7 @@ describe('lib/routes/users/update.js', function () {
 			testRequest.put({ body }, function (error, res, endpointResponse) {
 				expect(res.statusCode).to.equal(500);
 				expect(endpointResponse).to.deep.equal({
-					message: 'test-error',
-					data: {}
+					message: 'Internal server error: test-error'
 				});
 
 				done();
@@ -137,10 +136,7 @@ describe('lib/routes/users/update.js', function () {
 				testRequest.put({ body }, function (error, res, endpointResponse) {
 					expect(res.statusCode).to.equal(400);
 					expect(endpointResponse).to.deep.equal({
-						message: 'Invalid argument(s)',
-						data: {
-							field: 'should NOT have additional properties'
-						}
+						message: 'Bad request: should NOT have additional properties'
 					});
 
 					done();
@@ -153,10 +149,7 @@ describe('lib/routes/users/update.js', function () {
 				testRequest.put({ body }, function (error, res, endpointResponse) {
 					expect(res.statusCode).to.equal(400);
 					expect(endpointResponse).to.deep.equal({
-						message: 'Invalid argument(s)',
-						data: {
-							field: 'should NOT have fewer than 1 items'
-						}
+						message: 'Bad request: should NOT have fewer than 1 items'
 					});
 
 					done();
@@ -170,10 +163,7 @@ describe('lib/routes/users/update.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'name'
-							}
+							message: 'Bad request: name'
 						});
 
 						done();
@@ -186,10 +176,7 @@ describe('lib/routes/users/update.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'name'
-							}
+							message: 'Bad request: name'
 						});
 
 						done();
@@ -202,10 +189,7 @@ describe('lib/routes/users/update.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'name'
-							}
+							message: 'Bad request: name'
 						});
 
 						done();
@@ -220,10 +204,7 @@ describe('lib/routes/users/update.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'email'
-							}
+							message: 'Bad request: email'
 						});
 
 						done();
@@ -236,10 +217,7 @@ describe('lib/routes/users/update.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'email'
-							}
+							message: 'Bad request: email'
 						});
 
 						done();
@@ -252,10 +230,7 @@ describe('lib/routes/users/update.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'email'
-							}
+							message: 'Bad request: email'
 						});
 
 						done();

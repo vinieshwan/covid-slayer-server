@@ -61,7 +61,7 @@ describe('/lib/middlewares/generate-tokens.js', () => {
 		middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([401]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'Unauthorized Access', data: {} }
+				{ message: 'Unauthorized Access' }
 			]);
 			expect(res.cookie.notCalled).to.be.true;
 			expect(req.session).to.deep.equal({
@@ -76,7 +76,7 @@ describe('/lib/middlewares/generate-tokens.js', () => {
 		middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([401]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'Unauthorized Access', data: {} }
+				{ message: 'Unauthorized Access' }
 			]);
 			expect(res.cookie.notCalled).to.be.true;
 			expect(req.session).to.be.an('undefined');
@@ -89,7 +89,7 @@ describe('/lib/middlewares/generate-tokens.js', () => {
 		middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([401]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'Unauthorized Access', data: {} }
+				{ message: 'Unauthorized Access' }
 			]);
 			expect(res.cookie.notCalled).to.be.true;
 			expect(req.session).to.eql({});

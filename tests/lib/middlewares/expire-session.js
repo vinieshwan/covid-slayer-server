@@ -64,7 +64,7 @@ describe('/lib/middlewares/expire-session.js', () => {
 		await middleware(req, res, (error) => {
 			expect(error.status.getCall(0).args).to.deep.equal([500]);
 			expect(error.json.getCall(0).args).to.deep.equal([
-				{ message: 'error', data: {} }
+				{ message: 'Internal server error: error' }
 			]);
 			expect(res.clearCookie.callCount).to.equal(3);
 			expect(req.session).to.be.an('undefined');

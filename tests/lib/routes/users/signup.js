@@ -78,8 +78,7 @@ describe('lib/routes/users/signup.js', function () {
 			testRequest.post({ body }, function (error, res, endpointResponse) {
 				expect(res.statusCode).to.equal(500);
 				expect(endpointResponse).to.deep.equal({
-					message: 'test-error',
-					data: {}
+					message: 'Internal server error: test-error'
 				});
 
 				done();
@@ -93,10 +92,7 @@ describe('lib/routes/users/signup.js', function () {
 				testRequest.post({ body }, function (error, res, endpointResponse) {
 					expect(res.statusCode).to.equal(400);
 					expect(endpointResponse).to.deep.equal({
-						message: 'Invalid argument(s)',
-						data: {
-							field: 'should NOT have additional properties'
-						}
+						message: 'Bad request: should NOT have additional properties'
 					});
 
 					done();
@@ -110,10 +106,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: `should have required property 'name'`
-							}
+							message: "Bad request: should have required property 'name'"
 						});
 
 						done();
@@ -126,10 +119,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'name'
-							}
+							message: 'Bad request: name'
 						});
 
 						done();
@@ -142,10 +132,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'name'
-							}
+							message: 'Bad request: name'
 						});
 
 						done();
@@ -158,10 +145,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'name'
-							}
+							message: 'Bad request: name'
 						});
 
 						done();
@@ -176,10 +160,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: `should have required property 'email'`
-							}
+							message: "Bad request: should have required property 'email'"
 						});
 
 						done();
@@ -192,10 +173,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'email'
-							}
+							message: 'Bad request: email'
 						});
 
 						done();
@@ -208,10 +186,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'email'
-							}
+							message: 'Bad request: email'
 						});
 
 						done();
@@ -224,10 +199,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'email'
-							}
+							message: 'Bad request: email'
 						});
 
 						done();
@@ -242,10 +214,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: `should have required property 'password'`
-							}
+							message: "Bad request: should have required property 'password'"
 						});
 
 						done();
@@ -258,10 +227,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'password'
-							}
+							message: 'Bad request: password'
 						});
 
 						done();
@@ -274,10 +240,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'password'
-							}
+							message: 'Bad request: password'
 						});
 
 						done();
@@ -290,10 +253,7 @@ describe('lib/routes/users/signup.js', function () {
 					testRequest.post({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'password'
-							}
+							message: 'Bad request: password'
 						});
 
 						done();

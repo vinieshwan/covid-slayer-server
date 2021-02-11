@@ -134,8 +134,7 @@ describe('lib/routes/game/update-settings.js', function () {
 			testRequest.put({ body }, function (error, res, endpointResponse) {
 				expect(res.statusCode).to.equal(500);
 				expect(endpointResponse).to.deep.equal({
-					message: 'test-error',
-					data: {}
+					message: 'Internal server error: test-error'
 				});
 
 				done();
@@ -149,10 +148,7 @@ describe('lib/routes/game/update-settings.js', function () {
 				testRequest.put({ body }, function (error, res, endpointResponse) {
 					expect(res.statusCode).to.equal(400);
 					expect(endpointResponse).to.deep.equal({
-						message: 'Invalid argument(s)',
-						data: {
-							field: 'should NOT have additional properties'
-						}
+						message: 'Bad request: should NOT have additional properties'
 					});
 
 					done();
@@ -165,10 +161,7 @@ describe('lib/routes/game/update-settings.js', function () {
 				testRequest.put({ body }, function (error, res, endpointResponse) {
 					expect(res.statusCode).to.equal(400);
 					expect(endpointResponse).to.deep.equal({
-						message: 'Invalid argument(s)',
-						data: {
-							field: 'should NOT have fewer than 1 items'
-						}
+						message: 'Bad request: should NOT have fewer than 1 items'
 					});
 
 					done();
@@ -182,10 +175,7 @@ describe('lib/routes/game/update-settings.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'playerName'
-							}
+							message: 'Bad request: playerName'
 						});
 
 						done();
@@ -198,10 +188,7 @@ describe('lib/routes/game/update-settings.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'playerName'
-							}
+							message: 'Bad request: playerName'
 						});
 
 						done();
@@ -214,10 +201,7 @@ describe('lib/routes/game/update-settings.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'playerName'
-							}
+							message: 'Bad request: playerName'
 						});
 
 						done();
@@ -232,10 +216,7 @@ describe('lib/routes/game/update-settings.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'gameTime'
-							}
+							message: 'Bad request: gameTime'
 						});
 
 						done();
@@ -248,10 +229,7 @@ describe('lib/routes/game/update-settings.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'gameTime'
-							}
+							message: 'Bad request: gameTime'
 						});
 
 						done();
@@ -266,10 +244,7 @@ describe('lib/routes/game/update-settings.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'won'
-							}
+							message: 'Bad request: won'
 						});
 
 						done();
@@ -284,10 +259,7 @@ describe('lib/routes/game/update-settings.js', function () {
 					testRequest.put({ body }, function (error, res, endpointResponse) {
 						expect(res.statusCode).to.equal(400);
 						expect(endpointResponse).to.deep.equal({
-							message: 'Invalid argument(s)',
-							data: {
-								field: 'lost'
-							}
+							message: 'Bad request: lost'
 						});
 
 						done();
